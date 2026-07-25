@@ -1,0 +1,1549 @@
+/* ======================================================
+   Birthday Website - Final CSS
+   Part 1 : Global Styles
+====================================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Smooth Scroll */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* Body */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+
+    background:
+    linear-gradient(135deg,#ffdce7,#ffeef4,#fff7fa);
+
+    color:#444;
+
+    position:relative;
+
+    min-height:100vh;
+
+}
+
+/* Decorative Background */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:350px;
+    height:350px;
+
+    background:#ffc6da;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    top:-120px;
+    left:-120px;
+
+    opacity:.45;
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:300px;
+    height:300px;
+
+    background:#ffd7e5;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    bottom:-100px;
+    right:-100px;
+
+    opacity:.45;
+
+    z-index:-2;
+
+}
+
+/* Section */
+
+section{
+
+    width:100%;
+    /* min-height:100vh; */
+
+    /* display:flex; */
+    justify-content:center;
+    align-items:center;
+
+    padding:80px 20px;
+
+}
+
+/* Headings */
+
+h1{
+
+    font-family:'Playfair Display',serif;
+
+    color:#ff4f87;
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+h2{
+
+    font-family:'Dancing Script',cursive;
+
+    color:#ff5f93;
+
+    font-size:2.2rem;
+
+}
+
+h3{
+
+    color:#ff5f93;
+
+    margin-bottom:15px;
+
+}
+
+p{
+
+    line-height:1.8;
+
+    color:#555;
+
+}
+
+/* Subtitle */
+
+.subtitle{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+    color:#777;
+
+}
+
+/* Cards */
+
+.welcome-card,
+.letter-card,
+.final-card,
+.quiz-card,
+.memory{
+
+    background:rgba(255,255,255,.55);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.6);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:0 15px 35px rgba(255,105,155,.15);
+
+    transition:.4s;
+
+}
+
+.welcome-card:hover,
+.letter-card:hover,
+.final-card:hover,
+.quiz-card:hover,
+.memory:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* Button */
+
+.btn-start{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:14px 35px;
+
+    background:#ff5f93;
+
+    color:#fff;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(255,95,147,.35);
+
+}
+
+.btn-start:hover{
+
+    background:#ff3f7e;
+
+    transform:translateY(-4px);
+
+    color:#fff;
+
+}
+
+/* Floating Hearts */
+
+.hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+.hearts span{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    color:#ff8ab4;
+
+    font-size:20px;
+
+    animation:floatHeart 12s linear infinite;
+
+}
+
+.hearts span:nth-child(1){
+
+    left:8%;
+    animation-duration:10s;
+
+}
+
+.hearts span:nth-child(2){
+
+    left:20%;
+    animation-duration:14s;
+
+}
+
+.hearts span:nth-child(3){
+
+    left:35%;
+    animation-duration:11s;
+
+}
+
+.hearts span:nth-child(4){
+
+    left:52%;
+    animation-duration:15s;
+
+}
+
+.hearts span:nth-child(5){
+
+    left:68%;
+    animation-duration:12s;
+
+}
+
+.hearts span:nth-child(6){
+
+    left:82%;
+    animation-duration:13s;
+
+}
+
+.hearts span:nth-child(7){
+
+    left:93%;
+    animation-duration:10s;
+
+}
+
+/* Fade Animation */
+
+.loaded{
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+/* Keyframes */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes floatHeart{
+
+    0%{
+
+        transform:translateY(0) rotate(0);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-110vh) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff6f9f;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#fff4f8;
+
+}
+
+/* ======================================================
+   Birthday Website - Final CSS
+   Part 2 : Welcome, Letter, Timeline & Gallery
+====================================================== */
+
+
+/* =========================
+   Welcome Page
+========================= */
+
+.welcome-page,
+.letter-page,
+.timeline-page,
+.gallery-page{
+    position: relative;
+}
+
+.welcome-card,
+.letter-card,
+.final-card{
+    max-width: 850px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.welcome-icon,
+.letter-icon{
+
+    width:90px;
+    height:90px;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:38px;
+    color:#ff5f93;
+
+    box-shadow:0 10px 30px rgba(255,95,147,.25);
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+.letter-text{
+
+    text-align:left;
+
+    margin-top:20px;
+
+    line-height:2;
+
+    font-size:17px;
+
+}
+
+/* ===================================================
+   MEMORY WALL PAGE
+=================================================== */
+
+.memory-page{
+    background:linear-gradient(135deg,#ffdce7,#fff3f8,#fff9fb);
+    overflow-x:hidden;
+}
+
+/* Section */
+
+.memory-section{
+    padding:80px 20px;
+}
+
+/* Container */
+
+.memory-section .container{
+    max-width:1300px;
+    margin:auto;
+}
+
+/* Heading */
+
+.memory-section h1{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+    color:#ff4f87;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.memory-section .subtitle{
+    text-align:center;
+    font-size:18px;
+    color:#777;
+    margin-bottom:60px;
+}
+
+/* =====================
+   Memory Grid
+===================== */
+
+.memory-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+    gap:40px;
+
+    width:100%;
+
+}
+
+/* =====================
+   Card
+===================== */
+
+.memory-card{
+
+    background:rgba(255,255,255,.9);
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(255,105,155,.18);
+
+    transition:.35s ease;
+
+}
+
+.memory-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 45px rgba(255,105,155,.28);
+
+}
+
+/* =====================
+   Image
+===================== */
+
+.memory-card img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+/* =====================
+   Text
+===================== */
+
+.memory-card h3{
+
+    margin:22px 20px 15px;
+
+    font-size:28px;
+
+    color:#ff4f87;
+
+    font-family:'Playfair Display',serif;
+
+}
+
+.memory-card p{
+
+    margin:0 20px 25px;
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/* =====================
+   Button
+===================== */
+
+.memory-section .text-center{
+
+    margin-top:70px;
+
+}
+
+.memory-section .btn-start{
+
+    display:inline-block;
+
+    padding:15px 40px;
+
+    border-radius:40px;
+
+    background:#ff5f93;
+
+    color:#fff;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.memory-section .btn-start:hover{
+
+    background:#ff3f7e;
+
+    transform:translateY(-4px);
+
+}
+
+/* =====================
+   Responsive
+===================== */
+
+@media(max-width:992px){
+
+    .memory-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .memory-section{
+
+        padding:60px 18px;
+
+    }
+
+    .memory-section h1{
+
+        font-size:2.3rem;
+
+    }
+
+    .memory-card img{
+
+        height:260px;
+
+    }
+
+    .memory-card h3{
+
+        font-size:24px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .memory-section h1{
+
+        font-size:2rem;
+
+    }
+
+    .memory-section .subtitle{
+
+        font-size:15px;
+
+    }
+
+    .memory-card img{
+
+        height:220px;
+
+    }
+
+    .memory-card h3{
+
+        font-size:22px;
+
+    }
+
+    .memory-card p{
+
+        font-size:15px;
+
+    }
+
+    .memory-section .btn-start{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+}
+
+/* ======================================================
+   GALLERY PAGE
+====================================================== */
+
+.gallery-page{
+    background:linear-gradient(135deg,#ffdce7,#fff3f8,#fff9fb);
+    min-height:100vh;
+}
+
+/* Section */
+
+.gallery-section{
+    max-width:1300px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+/* Heading */
+
+.gallery-section h1{
+    text-align:center;
+    color:#ff4f87;
+    font-size:3rem;
+    margin-bottom:15px;
+    font-family:'Playfair Display',serif;
+}
+
+.gallery-section .subtitle{
+    text-align:center;
+    color:#777;
+    font-size:18px;
+    margin-bottom:50px;
+}
+
+/* =====================================
+   Masonry Gallery
+===================================== */
+
+.gallery-grid{
+
+    columns:2;
+    column-gap:30px;
+
+}
+
+/* =====================================
+   Card
+===================================== */
+
+.photo-card{
+
+    display:inline-block;
+
+    width:100%;
+
+    margin-bottom:30px;
+
+    background:#fff;
+
+    border-radius:25px;
+
+    padding:15px;
+
+    box-shadow:0 15px 35px rgba(255,105,155,.18);
+
+    transition:.35s ease;
+
+    break-inside:avoid;
+
+    overflow:hidden;
+
+}
+
+.photo-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(255,105,155,.28);
+
+}
+
+/* =====================================
+   Images
+===================================== */
+
+.photo-card img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+    border-radius:18px;
+
+}
+
+/* =====================================
+   Title
+===================================== */
+
+.photo-card h4{
+
+    text-align:center;
+
+    margin:18px 0 10px;
+
+    color:#ff4f87;
+
+    font-size:30px;
+
+    font-family:'Playfair Display',serif;
+
+}
+
+/* =====================================
+   Description
+===================================== */
+
+.photo-card p{
+
+    text-align:center;
+
+    color:#666;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+    padding:0 10px 10px;
+
+}
+
+/* =====================================
+   Popup
+===================================== */
+
+.popup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.85);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    cursor:pointer;
+
+}
+
+.popup img{
+
+    max-width:90%;
+
+    max-height:90%;
+
+    border-radius:20px;
+
+    border:5px solid #fff;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+}
+
+/* =====================================
+   Continue Button
+===================================== */
+
+.gallery-btn{
+
+    text-align:center;
+
+    margin-top:60px;
+
+}
+
+/* =====================================
+   Responsive
+===================================== */
+
+@media(max-width:992px){
+
+    .gallery-grid{
+
+        columns:2;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .gallery-grid{
+
+        columns:1;
+
+    }
+
+    .gallery-section h1{
+
+        font-size:2.3rem;
+
+    }
+
+    .photo-card h4{
+
+        font-size:24px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .gallery-section{
+
+        padding:20px 15px;
+
+    }
+
+    .gallery-section h1{
+
+        font-size:2rem;
+
+    }
+
+    .gallery-section .subtitle{
+
+        font-size:15px;
+
+    }
+
+    .photo-card{
+
+        padding:12px;
+
+    }
+
+    .photo-card h4{
+
+        font-size:22px;
+
+    }
+
+    .photo-card p{
+
+        font-size:15px;
+
+    }
+
+}
+
+/* ======================================================
+   Birthday Website - Final CSS
+   Part 3 : Quiz, Surprise & Final Page
+====================================================== */
+
+
+/* =========================
+   Quiz Page
+========================= */
+
+.quiz-page section{
+    padding:80px 20px;
+}
+
+.quiz-card{
+    max-width:700px;
+    margin:30px auto;
+    text-align:center;
+}
+
+.quiz-card h3{
+    margin-bottom:25px;
+}
+
+.quiz-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    margin:10px 0;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#fff;
+
+    color:#444;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 8px 18px rgba(255,95,147,.15);
+
+}
+
+.quiz-btn:hover{
+
+    background:#ff5f93;
+
+    color:#fff;
+
+    transform:translateY(-3px);
+
+}
+
+.quiz-btn:disabled{
+
+    cursor:not-allowed;
+
+    opacity:.95;
+
+}
+
+
+
+/* =========================
+   Surprise Page
+========================= */
+
+.surprise-page section{
+
+    text-align:center;
+
+}
+
+.surprise-box{
+
+    width:180px;
+    height:180px;
+
+    margin:60px auto;
+
+    border-radius:30px;
+
+    background:linear-gradient(135deg,#ff6f9f,#ff3f7e);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#fff;
+
+    font-size:90px;
+
+    cursor:pointer;
+
+    box-shadow:0 20px 40px rgba(255,95,147,.35);
+
+    animation:bounceGift 2s infinite;
+
+    transition:.4s;
+
+}
+
+.surprise-box:hover{
+
+    transform:scale(1.08);
+
+}
+
+@keyframes bounceGift{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+.gift-message{
+
+    display:none;
+
+    max-width:800px;
+
+    margin:40px auto;
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:0 15px 35px rgba(255,95,147,.2);
+
+}
+
+.gift-message h2{
+
+    margin-bottom:20px;
+
+}
+
+.gift-message p{
+
+    font-size:17px;
+
+}
+
+
+
+/* =========================
+   Final Page
+========================= */
+
+.final-page{
+
+    overflow-x:hidden;
+
+}
+
+.final-section{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.final-card{
+
+    position:relative;
+
+    max-width:900px;
+
+}
+
+.final-card h1{
+
+    margin-top:15px;
+
+}
+
+.final-card h4{
+
+    color:#ff5f93;
+
+    margin-top:30px;
+
+}
+
+.heart{
+
+    font-size:70px;
+
+    color:#ff4f87;
+
+    margin:25px 0;
+
+    animation:pulse 2s infinite;
+
+}
+
+
+
+/* =========================
+   Stars
+========================= */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    background-image:
+    radial-gradient(circle,#ffffff 1px,transparent 1px);
+
+    background-size:40px 40px;
+
+    opacity:.35;
+
+}
+
+
+
+/* =========================
+   Music Button
+========================= */
+
+.music-btn{
+
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(10px);
+
+    color:#ff5f93;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+.music-btn:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* =========================
+   Typing Effect
+========================= */
+
+.typing{
+
+    white-space:pre-line;
+
+}
+
+/* ======================================================
+   Birthday Website - Final CSS
+   Part 4 : Responsive Design & Final Polish
+====================================================== */
+
+
+/* =========================
+   Scroll To Top Button
+========================= */
+
+.top-btn{
+
+    position:fixed;
+
+    bottom:95px;
+
+    right:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ff5f93;
+
+    color:#fff;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 10px 25px rgba(255,95,147,.3);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+.top-btn.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.top-btn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/* =========================
+   Cursor Heart
+========================= */
+
+.cursor-heart{
+
+    position:absolute;
+
+    color:#ff5f93;
+
+    font-size:18px;
+
+    pointer-events:none;
+
+    animation:heartFly 1s linear forwards;
+
+    z-index:9999;
+
+}
+
+@keyframes heartFly{
+
+    0%{
+
+        opacity:1;
+
+        transform:translate(-50%,-50%) scale(1);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:translate(-50%,-90px) scale(0);
+
+    }
+
+}
+
+
+
+/* =========================
+   Selection
+========================= */
+
+::selection{
+
+    background:#ff5f93;
+
+    color:#fff;
+
+}
+
+
+
+/* =========================
+   Links
+========================= */
+
+a{
+
+    text-decoration:none;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media(max-width:992px){
+
+    h1{
+
+        font-size:2.5rem;
+
+    }
+
+    h2{
+
+        font-size:2rem;
+
+    }
+
+    .timeline::before{
+
+        left:25px;
+
+    }
+
+    .memory{
+
+        width:100%;
+
+        left:0 !important;
+
+        padding-left:70px;
+
+    }
+
+    .memory::before{
+
+        left:5px;
+
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+    section{
+
+        padding:60px 18px;
+
+    }
+
+    h1{
+
+        font-size:2.1rem;
+
+    }
+
+    h2{
+
+        font-size:1.8rem;
+
+    }
+
+    .welcome-card,
+    .letter-card,
+    .final-card,
+    .quiz-card,
+    .gift-message{
+
+        padding:25px;
+
+    }
+
+    .surprise-box{
+
+        width:150px;
+
+        height:150px;
+
+        font-size:70px;
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+
+@media(max-width:480px){
+
+    h1{
+
+        font-size:1.8rem;
+
+    }
+
+    h2{
+
+        font-size:1.5rem;
+
+    }
+
+    p{
+
+        font-size:15px;
+
+    }
+
+    .btn-start{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .welcome-icon,
+    .letter-icon{
+
+        width:70px;
+
+        height:70px;
+
+        font-size:28px;
+
+    }
+
+}
+
+
+
+/* =========================
+   End of CSS
+========================= */    
